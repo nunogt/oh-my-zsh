@@ -4,4 +4,9 @@ custom/
 # temp files directories
 cache/
 log/
+<<<<<<< HEAD
 .zshrc
+=======
+*.swp
+.DS_Store
+>>>>>>> upstream/master
