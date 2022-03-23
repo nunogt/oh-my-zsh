@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -107,12 +107,12 @@ export EDITOR='vim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Docusaurus dockerised node
-alias _adocusaurus='docker run --rm -it --workdir="/data/" -v $(pwd)/:/data/ -p 3000:3000 node:17'
-alias docusaurus-dev='_adocusaurus yarn run start --host 0.0.0.0'
-alias docusaurus-build='_adocusaurus yarn run build'
+alias docusaurus='docker run --rm -it --workdir="/data/" -v $(pwd)/:/data/ -p 3000:3000 node:17'
+alias docusaurus-dev='docusaurus yarn run start --host 0.0.0.0'
+alias docusaurus-build='docusaurus yarn run build'
 
 # Flask dockerised python
-alias flask='docker run --rm -it -e FLASK_ENV="development" -e FLASK_APP=$FLASK_APP -v $(pwd):/usr/src/app -p 5000:5000 nunogt/flask:2.0'
+alias flask='docker run --rm -it -e FLASK_ENV="development" -e FLASK_APP=$FLASK_APP -v $(pwd):/usr/src/app -p 5000:5000 nunogt/flask:latest'
 
 # Ansible dockerised python
 alias _aansible='docker run --rm -it --workdir="/data/" -v $(pwd)/:/data/ --mount type=bind,src="$HOME"/.ssh/known_hosts,target=/root/.ssh/known_hosts --mount type=bind,src=/run/host-services/ssh-auth.sock,target=/run/host-services/ssh-auth.sock -e SSH_AUTH_SOCK="/run/host-services/ssh-auth.sock" nunogt/ansible:latest'
